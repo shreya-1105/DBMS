@@ -1,0 +1,20 @@
+create table student(s_reg_no int primary key,sname varchar(10),class char(5));
+insert into student values(101,'om','fybcs');
+insert into student values(102,'sai','fybcs');
+insert into student values(103,'ram','fybcs');
+select *  from student;
+
+create table competition(cno int primary key,cname varchar(20),ctype varchar(10));
+insert into competition values(1,'dance','national');
+insert into competition values(2,'boxing','state');
+insert into competition values(3,'drawing','national');
+select * from competition;
+
+create table sc(s_reg_no int references student,cno int references competition,rank char(20),year int);
+insert into sc values(101,1,'first',2019);
+insert into sc values(101,3,'second',2018);
+insert into sc values(102,1,'first',2019);
+insert into sc values(102,2,'third',2017);
+insert into sc values(103,3,'first',2020);
+insert into sc values(103,2,'first',2021);
+select * from sc;

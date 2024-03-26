@@ -1,0 +1,21 @@
+create table movie (mname varchar (25) primary key, relyear integer, budget int);
+create table actor (aname varchar(30) primary key, role varchar(30), charges money, address varchar(30) );
+create table ma(mname varchar(25),aname varchar(30));
+
+insert into movie values('xyz',1997,19000000);
+insert into movie values('abc',1987,20000000);
+insert into movie values('pqr',1993,12000000);
+insert into movie values('stu',2000,31000000);
+insert into movie values('efg',2021,45000000);
+
+insert into actor values('ak','xyz','800000','mumbai');
+insert into actor values('sk','abc','500000','bangkok');
+insert into actor values('vd','stu','600000','dubai');
+insert into actor values('ts','pqr','1000000','manali');
+
+insert into ma values('xyz','ts');
+insert into ma values('abc','ak');
+insert into ma values('stu','vd');
+insert into ma values('efg','sk');
+insert into ma values('xyz','sk');
+

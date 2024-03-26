@@ -1,0 +1,23 @@
+create table car(cno int primary key,owner varchar(20),model varchar(20),color varchar(10));
+insert into car values(101,'Shreya','Creta','Grey');
+insert into car values(102,'Atharva','Exter','White');
+insert into car values(103,'Aradhya','Kia Sonet','Black');
+insert into car values(104,'Aditya','Fortuner','Blue');
+select * from car;
+
+create table driver(dno int primary key,dname varchar(20),licn_no int,salary money);
+insert into driver values(1001,'Shantanu',20021,20000);
+insert into driver values(1002,'Pradip',27684,9000);
+insert into driver values(1003,'Santosh',22543,10000);
+select * from driver;
+
+create table CD(cno int references car,dno int references driver);
+
+insert into CD values(101,1001);
+insert into CD values(102,1002);
+insert into CD values(103,1003);
+insert into CD values(104,1003);
+insert into CD values(102,1002);
+
+select * from CD;
+

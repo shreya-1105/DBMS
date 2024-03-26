@@ -1,0 +1,25 @@
+create table bus(bsno int primary key,capacity int,depot_name varchar(20));
+insert into bus values(101,100,'Shrirampur');
+insert into bus values(102,100,'Newasa');
+insert into bus values(103,100,'Kopergoan');
+insert into bus values(104,100,'Nagar');
+select * from bus;
+
+create table route(rno int primary key,source varchar(20),destination varchar(20),no_of_stn int);
+insert into route values(1,'Shrirampur','Kopergoan',3);
+insert into route values(2,'Newasa','Nashik',7);
+insert into route values(3,'Nagar','Kopergoan',4);
+insert into route values(4,'Shrirampur','Nagar',2);
+insert into route values(5,'Newasa','Kopergoan',4);
+
+select * from route;
+
+create table BR(bsno int references bus,rno int references route);
+
+insert into BR values (101,1);
+insert into BR values(101,2);
+insert into BR values(103,3);
+insert into BR values(104,4);
+insert into BR values(104,5);
+select * from BR;
+

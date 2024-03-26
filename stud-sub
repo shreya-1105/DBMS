@@ -1,0 +1,20 @@
+create table student(rno int primary key,sname varchar(20),address varchar(20),class varchar(20));
+
+insert into student values(101,'om', 'shrirampur','ty');
+insert into student values(102,'sai', 'shrirampur', 'ty');
+insert into student values(103,'ram', 'shrirampur', 'sy'); 
+
+create table subject(subcode int primary key,subname varchar(20)); 
+
+insert into subject values(401,'java');
+Insert into subject values(402,'php'); 
+Insert into subject values(403,'dbms'); 
+insert into subject values(404,'c'); 
+
+create table ss(rno int references student,subno int references subject,marks int, status varchar(20)); 
+
+insert into ss values(101,401,80, 'pass'); 
+insert into ss values(101,402,30,'fail');
+insert into ss values(102,403,55, 'pass');
+insert into ss values(102,404,75, 'pass');
+insert into ss values(103,401,25,'fail'); 

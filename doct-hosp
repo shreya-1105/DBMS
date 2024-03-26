@@ -1,0 +1,13 @@
+create table doctor (dno int primary key, dname varchar(30), specialization varchar(35), charges int);
+create table hospital (hno int primary key, hname varchar(20), city varchar(10),dno int references doctor);
+
+insert into doctor values(101,'DR.Dev','MD',500);
+insert into doctor values(102,'DR.Chothani','MD',500);
+insert into doctor values(103,'DR.Unde','MBBS',500);
+insert into doctor values(104,'DR.Desai','BHMS',500);
+
+insert into hospital values(01,'Nobel','Nagar',104);
+insert into hospital values(02,'City','Pune',102);
+insert into hospital values(03,'Jahangir','Mumbai',103);
+insert into hospital values(04,'Jagjivan','Shirdi',101);
+

@@ -1,0 +1,12 @@
+create table Customer (cno integer primary key, cname varchar(20), city varchar(20));
+create table Account (ano int primary key, atype varchar(10), odate date, balance money,cno int references Customer);
+
+insert into Customer values(101,'arun','pune');
+insert into Customer values(102,'kalpana','mumbai');
+insert into Customer values(103,'anil','shirdi');
+insert into Customer values(104,'lata','shrirampur');
+
+insert into Account values(1,'saving','2005-8-7','10000',102);
+insert into Account values(2,'current','2012-9-12','2000',102);
+insert into Account values(3,'current','2018-2-23','1000000',102);
+insert into Account values(4,'saving','2010-12-9','4000',102);

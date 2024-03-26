@@ -1,0 +1,24 @@
+create table project(pno int primary key,pname char(20),ptype char(20),duration int);
+insert into project values(101,'admission process','Educational',20);
+insert into project values(102,'credit system','Banking',40);
+insert into project values(103,'apartment project','Construction',50);
+insert into project values(104,'debit system','Banking',10);
+select * from project;
+
+create table employee(eno int primary key,ename varchar(20),join_date date);
+insert into employee values(1,'om','2021-9-8');
+insert into employee values(2,'sai','2018-4-6');
+insert into employee values(3,'ram','2022-5-3');
+insert into employee values(4,'sham','2023-4-6');
+insert into employee values(5,'sita','2019-4-8');
+insert into employee values(6,'gita','2015-9-9');
+select * from employee;
+
+create table PE(pno int references project,eno int references employee,start_date date);
+insert into PE values(101,1,'2022-8-6');
+insert into PE values(102,2,'2021-6-8');
+insert into PE values(102,3,'2020-7-9');
+insert into PE values(103,4,'2022-11-12');
+insert into PE values(103,5,'2021-11-6');
+insert into PE values(104,5,'2020-10-8');
+insert into PE values(104,6,'2022-2-6');

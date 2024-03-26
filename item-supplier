@@ -1,0 +1,1 @@
+create table item(ino int primary key,iname varchar(20));

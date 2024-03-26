@@ -1,0 +1,27 @@
+create table teacher(tno int primary key,tname varchar(20),age int, yrs_exp int);
+insert into teacher values(101,'Pawar mam',35,10);
+insert into teacher values(102,'Shinde mam',32,9);
+insert into teacher values(103,'Ghalme mam',29,5);
+insert into teacher values(104,'Bhakare mam',30,8);
+
+select * from teacher;
+
+create table subject(sno int primary key,sname varchar(15));
+insert into subject values(01,'rdbms');
+insert into subject values(02,'html');
+insert into subject values(03,'bootstrap');
+insert into subject values(04,'Maths');
+
+select * from subject;
+
+create table ST(tno int references teacher,sno int references subject);
+insert into ST values(101,01);
+insert into ST values(102,02);
+insert into ST values(102,03);
+insert into ST values(101,04);
+insert into ST values(103,01);
+insert into ST values(103,02);
+insert into ST values(104,04);
+
+select * from ST;
+

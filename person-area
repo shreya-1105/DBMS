@@ -1,0 +1,20 @@
+create table area(aname varchar(20) primary key,area_type varchar(20),pincode integer);
+
+insert into area values('loni','rural',28917);
+insert into area values('shirampur','urban',28918);
+insert into area values('pune','urban',28916);
+insert into area values('taklibhan','rural',28915);
+insert into area values('loni','urban',28914);
+insert into area values('mumbai','urban',29914);
+
+create table person(pnumber int primary key, pname varchar(20),birthdate date, income numeric (10),
+aname varchar(20) references area); 
+
+insert into person values(1,'om', '6-nov-2000',25000,'loni');
+insert into person values(2,'sai', '24-aug-1987',95000, 'pune');
+insert into person values(3,'ram','16-april-2006',15000, 'mumbai'); 
+insert into person values(4,'sham', '9-april-2002',85000, 'mumbai'); 
+insert into person values(5, 'aman', '8-april-2001',35000, 'taklibhan'); 
+insert into person values(6,'gita ', '10-nov-2000',75000,'loni');
+
+select * from person;

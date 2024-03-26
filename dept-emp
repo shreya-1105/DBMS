@@ -1,0 +1,12 @@
+create table dept(dno int primary key,dname varchar(20),city varchar(20));
+insert into dept values(101,'sales','pune');
+insert into dept values(102,'manufacture','mumbai');
+insert into dept values(103,'production','shirdi');
+insert into dept values(104,'finance,'sambhajinagar');
+
+create table emp(eno int primary key,ename varchar(20),salary money,dno int references dept);
+insert into emp values(1,'om',20000,102);
+insert into emp values(1,'sai',20000,102);
+insert into emp values(1,'ram',20000,102);
+insert into emp values(1,'sham',20000,102);
+insert into emp values(1,'aman',20000,102);
