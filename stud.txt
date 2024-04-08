@@ -1,0 +1,36 @@
+create table student(rno int primary key,
+sname char(10)not null,
+per float check(per<=100),
+address char(10));
+
+insert into student values(1,'om',55,'pune');
+insert into student values(2,'sai',75,'pune');
+insert into student values(3,'ram',75,'shrirampur');
+insert into student values(4,'sham',35,'shrirampur');
+insert into student values(5,'aman',85,'belapur');
+insert into student values(6,'dada',45,'pune');
+
+question:
+display student whose address is pune.
+select * from student where address='pune';
+
+display student whose percentage less than 35
+select * from student where per<35;
+
+display record of student aman.
+select * from student where sname='aman';
+
+Dispaly student whose address is pune and percentage greater then 35
+    select * from student
+    where address='pune' 
+    AND per>35;
+
+Dispaly student whose percentage greater then 50 and percentage less than 80
+    select * from student
+    where per>50
+    AND per<80;
+
+display student whose address is shrirampur,belapur
+select * from student
+where address='shrirampur' 
+OR address='belapur';

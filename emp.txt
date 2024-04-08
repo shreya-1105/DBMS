@@ -1,0 +1,47 @@
+create table Dept
+(dno int primary key,
+dname varchar(10)not null,
+dloc varchar(10));
+
+create table emp
+(eno int primary key,
+ename varchar(10)not null,
+designation varchar(10)not null,
+sal int,
+dno int references Dept);
+
+a)
+insert into dept values(101,'computer','pune');
+insert into dept values(102,'account','mumbai');
+insert into dept values(103,'sales','pune');
+insert into dept values(104,'purchase','Nashik');
+insert into dept values(105,'production','Shrirampur');
+b)
+
+insert into emp values(1,'om','Manager',50000,101);
+insert into emp values(2,'sai','clerk',40000,101);
+
+insert into emp values(3,'ram','Manager',70000,102);
+insert into emp values(4,'sham','worker',24000,102);
+
+insert into emp values(5,'aba','clerk',40000,103);
+insert into emp values(6,'baba','worker',25000,103);
+
+insert into emp values(7,'dada','Manager',70000,104);
+insert into emp values(8,'ganesh','worker',24000,104);
+
+insert into emp values(9,'abhi','Manager',80000,105);
+insert into emp values(10,'athang','worker',64000,105);
+
+
+
+Que: Display details of employee whose designation is clerk.
+select * from emp where designation='clerk';
+
+Que: Display emp whose salary greater than 50000
+select * from emp where sal>=50000;
+
+display emp whose deptname is account.
+select  emp.* from emp,dept
+where  dept.dno=emp.dno
+AND dname='account';
